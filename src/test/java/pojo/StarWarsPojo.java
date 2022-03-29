@@ -8,7 +8,12 @@ public class StarWarsPojo {
     private int count;
     private String next;
     private String previous;
-    private List<Map<String,Object>> results;
+    private List<StarWarsCharactersPojo> results;
+
+    //private List<Map<String,Object>> results;
+
+
+
 
     public int getCount() {
         return count;
@@ -34,11 +39,20 @@ public class StarWarsPojo {
         this.previous = previous;
     }
 
-    public List<Map<String, Object>> getResults() {
+//    public List<Map<String, Object>> getResults() {
+//        return results;
+//    }
+//
+//    public void setResult(List<Map<String, Object>> results) {
+//        this.results = results;
+//    }
+
+
+    public List<StarWarsCharactersPojo> getResults() {
         return results;
     }
 
-    public void setResult(List<Map<String, Object>> results) {
+    public void setResults(List<StarWarsCharactersPojo> results) {
         this.results = results;
     }
 }

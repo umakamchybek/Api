@@ -6,6 +6,7 @@ import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
+import pojo.StarWarsCharactersPojo;
 import pojo.StarWarsPojo;
 
 import java.util.List;
@@ -44,5 +45,18 @@ public class StarWars {
         StarWarsPojo deserializedResp= response.as(StarWarsPojo.class);
         Assert.assertEquals(82, deserializedResp.getCount());
 
+//
+//        List<Map<String, Object>> results= deserializedResp.getResults();
+//
+//        for(Map<String, Object> map:results){
+//            System.out.println(map.get("name"));
+//        }
+
+       List<StarWarsCharactersPojo> results= deserializedResp.getResults();
+        System.out.println(results.get(0).getName());
+        for(StarWarsCharactersPojo character: results){
+            System.out.println(character.getName());
+
+        }
     }
 }
